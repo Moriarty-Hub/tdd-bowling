@@ -36,4 +36,12 @@ public class BowlingGameTest {
         assertEquals(13, score);
     }
 
+    @Test
+    void should_return_the_score_sum_of_three_throws_when_got_spare_in_10th_frame() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[][] scorecard = new int[][] {{3, 4}, {2, 6}, {1, 1}, {10, 0}, {2, 2}, {4, 6}, {5, 4}, {4, 1}, {1, 2}, {3, 7, 2}};
+        int score = bowlingGame.getFrameFinalScore(scorecard, 10);
+        assertEquals(12, score);
+    }
+
 }
