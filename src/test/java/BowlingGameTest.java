@@ -44,4 +44,12 @@ public class BowlingGameTest {
         assertEquals(12, score);
     }
 
+    @Test
+    void should_return_the_score_sum_of_first_two_throws_when_failed_to_got_strike_or_spare_in_10th_frame() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[][] scorecard = new int[][] {{3, 4}, {2, 6}, {1, 1}, {10, 0}, {2, 2}, {4, 6}, {5, 4}, {4, 1}, {1, 2}, {2, 4, 0}};
+        int score = bowlingGame.getFrameFinalScore(scorecard, 10);
+        assertEquals(6, score);
+    }
+
 }
